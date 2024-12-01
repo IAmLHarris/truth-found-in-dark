@@ -5,7 +5,7 @@
     "description": "Documentation for rock and plant inhabitants",
     "version": "1.0.0"
   },
-  "host": "localhost:4000",
+  "host": "truth-found-in-dark.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",

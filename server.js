@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
-const mongodb = require("./database/database");
+const mongodb = require("./helpers/database");
 const bodyParser = require("body-parser");
 
 const port = process.env.PORT || 4000;
+
+process.on("uncaughtException", (err, origin) => {
+  console.log(
+    process.stderr.id,
+    `Exception found! ${err}\n` + `Exception origin: ${origin}`
+  );
+});
 
 // Swagger stuff
 const swaggerUi = require("swagger-ui-express");

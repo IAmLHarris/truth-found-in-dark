@@ -1,6 +1,7 @@
 const routes = require("express").Router();
 
 routes.get("/", (req, res) => {
+  // #swagger.tags=['Home']
   res.send("Hello! I'm very scared!");
 });
 

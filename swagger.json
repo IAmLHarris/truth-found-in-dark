@@ -15,7 +15,7 @@
     "/": {
       "get": {
         "tags": [
-          "Rock"
+          "Rocks"
         ],
         "description": "",
         "produces": [
@@ -32,7 +32,7 @@
       },
       "post": {
         "tags": [
-          "Rock"
+          "Rocks"
         ],
         "description": "",
         "parameters": [
@@ -74,7 +74,7 @@
     "/rocks/": {
       "get": {
         "tags": [
-          "Rock"
+          "Rocks"
         ],
         "description": "",
         "produces": [
@@ -91,7 +91,7 @@
       },
       "post": {
         "tags": [
-          "Rock"
+          "Rocks"
         ],
         "description": "",
         "parameters": [
@@ -130,10 +130,102 @@
         }
       }
     },
+    "/rocks/{id}": {
+      "get": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Gets individual rock from database based on ID and displays",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Edits individual rock from database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "personality": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Deletes individual rock from database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/plants/": {
       "get": {
         "tags": [
-          "Plant"
+          "Plants"
         ],
         "description": "",
         "produces": [
@@ -150,9 +242,9 @@
       },
       "post": {
         "tags": [
-          "Plant"
+          "Plants"
         ],
-        "description": "",
+        "description": "Adds individual plant to database",
         "parameters": [
           {
             "name": "body",
@@ -182,6 +274,190 @@
           },
           "412": {
             "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/plants/{id}": {
+      "get": {
+        "tags": [
+          "Plants"
+        ],
+        "description": "Gets individual plant from database based on ID and displays",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Plants"
+        ],
+        "description": "Edits individual plant from database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "personality": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Plants"
+        ],
+        "description": "Deletes individual plant from database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Gets individual rock from database based on ID and displays",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Edits individual rock from database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "personality": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rocks"
+        ],
+        "description": "Deletes individual rock from database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"

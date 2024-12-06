@@ -9,6 +9,10 @@ const validation = require("../middleware/validationmid");
 // });
 
 router.get("/", inhabController.getRocks);
+router.get("/:id", inhabController.getRock);
+
 router.post("/", validation.check, inhabController.addRock);
+router.put("/:id", validation.check, inhabController.updateRock);
+router.delete("/:id", inhabController.removeRock);
 
 module.exports = router;

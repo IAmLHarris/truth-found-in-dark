@@ -9,6 +9,10 @@ const validation = require("../middleware/validationmid");
 // });
 
 router.get("/", inhabController.getPlants);
+router.get("/:id", inhabController.getPlant);
+
 router.post("/", validation.check, inhabController.addPlant);
+router.put("/:id", validation.check, inhabController.updatePlant);
+router.delete("/:id", inhabController.removePlant);
 
 module.exports = router;

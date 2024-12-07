@@ -86,9 +86,9 @@ const updateRock = async (req, res) => {
     location: req.body.location,
     name: req.body.name,
     personality: req.body.personality,
-    instrument: req.body.personality,
-    size: req.body.personality,
-    job: req.body.personality,
+    instrument: req.body.instrument,
+    size: req.body.size,
+    job: req.body.job,
   };
 
   const result = await mongodb

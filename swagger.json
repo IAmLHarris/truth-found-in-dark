@@ -200,6 +200,15 @@
                 },
                 "personality": {
                   "example": "any"
+                },
+                "instrument": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "job": {
+                  "example": "any"
                 }
               }
             }
@@ -442,6 +451,15 @@
                   "example": "any"
                 },
                 "personality": {
+                  "example": "any"
+                },
+                "instrument": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "job": {
                   "example": "any"
                 }
               }

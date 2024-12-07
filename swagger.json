@@ -5,7 +5,7 @@
     "description": "Documentation for rock and plant inhabitants",
     "version": "1.0.0"
   },
-  "host": "truth-found-in-dark.onrender.com",
+  "host": "localhost:4000",
   "basePath": "/",
   "schemes": [
     "http",
@@ -17,7 +17,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "",
+        "description": "Gets all rocks",
         "produces": [
           "application/json"
         ],
@@ -34,7 +34,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "",
+        "description": "Adds individual rock from database with 7 notabilities",
         "parameters": [
           {
             "name": "body",
@@ -52,6 +52,15 @@
                   "example": "any"
                 },
                 "personality": {
+                  "example": "any"
+                },
+                "instrument": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "job": {
                   "example": "any"
                 }
               }
@@ -76,7 +85,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "",
+        "description": "Gets all rocks",
         "produces": [
           "application/json"
         ],
@@ -93,7 +102,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "",
+        "description": "Adds individual rock from database with 7 notabilities",
         "parameters": [
           {
             "name": "body",
@@ -111,6 +120,15 @@
                   "example": "any"
                 },
                 "personality": {
+                  "example": "any"
+                },
+                "instrument": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "job": {
                   "example": "any"
                 }
               }
@@ -157,7 +175,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "Edits individual rock from database",
+        "description": "Edits an individual rock from database",
         "parameters": [
           {
             "name": "id",
@@ -400,7 +418,7 @@
         "tags": [
           "Rocks"
         ],
-        "description": "Edits individual rock from database",
+        "description": "Edits an individual rock from database",
         "parameters": [
           {
             "name": "id",

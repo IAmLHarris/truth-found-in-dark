@@ -5,6 +5,9 @@ const ObjectId = require("mongodb").ObjectId;
 
 const getRocks = async (req, res) => {
   // #swagger.tags=['Rocks']
+  /*
+            #swagger.description = 'Gets all rocks'
+          */
   mongodb
     .getDatabase()
     .db("project2")
@@ -22,32 +25,6 @@ const getRocks = async (req, res) => {
       res.status(200).json(rocks);
     });
 };
-
-const addRock = async (req, res) => {
-  // #swagger.tags=['Rocks']
-  //   DOES NOT WORK WITHOUT BODY PARSER
-  //   USE IT!!!
-
-  const rock = {
-    color: req.body.color,
-    location: req.body.location,
-    name: req.body.name,
-    personality: req.body.personality,
-  };
-
-  const result = await mongodb
-    .getDatabase()
-    .db("project2")
-    .collection("rocks")
-    .insertOne(rock);
-
-  if (result.acknowledged) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || "Error occured while adding rock!");
-  }
-};
-
 const getRock = async (req, res) => {
   // #swagger.tags=['Rocks']
   /*
@@ -66,10 +43,42 @@ const getRock = async (req, res) => {
   });
 };
 
+const addRock = async (req, res) => {
+  // #swagger.tags=['Rocks']
+  //   DOES NOT WORK WITHOUT BODY PARSER
+  //   USE IT!!!
+
+  /*
+            #swagger.description = 'Adds individual rock from database with 7 notabilities'
+          */
+
+  const rock = {
+    color: req.body.color,
+    location: req.body.location,
+    name: req.body.name,
+    personality: req.body.personality,
+    instrument: req.body.instrument,
+    size: req.body.size,
+    job: req.body.job,
+  };
+
+  const result = await mongodb
+    .getDatabase()
+    .db("project2")
+    .collection("rocks")
+    .insertOne(rock);
+
+  if (result.acknowledged) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || "Error occured while adding rock!");
+  }
+};
+
 const updateRock = async (req, res) => {
   // #swagger.tags=['Rocks']
   /*
-            #swagger.description = 'Edits individual rock from database'
+            #swagger.description = 'Edits an individual rock from database'
           */
   const rockId = new ObjectId(req.params.id);
   const rock = {
@@ -77,6 +86,9 @@ const updateRock = async (req, res) => {
     location: req.body.location,
     name: req.body.name,
     personality: req.body.personality,
+    instrument: req.body.personality,
+    size: req.body.personality,
+    job: req.body.personality,
   };
 
   const result = await mongodb

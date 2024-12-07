@@ -5,7 +5,7 @@ const doc = {
     title: "Inhabitants API Documentation",
     description: "Documentation for rock and plant inhabitants",
   },
-  host: "truth-found-in-dark.onrender.com",
+  host: "localhost:4000",
   schemes: ["http", "https"],
 };
 
